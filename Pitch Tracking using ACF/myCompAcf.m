@@ -21,17 +21,16 @@ if ((m<=1 && n<=1) || (m>1 && n>1))
     error('illegal input vector');
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 a = [inputVector;zeros(m - 1,1)];
 r = ifft(fft(a) .* conj(fft(a)));
 r = r(1:m);
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % normalize result
 if (bIsNormalized)
-    
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     r = r / max(r);
 end
 

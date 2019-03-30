@@ -12,6 +12,6 @@ if (n>1)
     error('illegal input signal');
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 pitchInMidi = 69 + 12 * log2(pitchInHz / 440);
 end

@@ -21,25 +21,25 @@ if (m1~=m2)
    error('size of estimation and annotation do not match'); 
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 n   = 0;
 sum = 0;
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 for i = 1 :length(estimation)
     if (annotation(i) ~= 0)
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
         midiE = myFreq2MidiPitch(estimation(i));
         midiA = myFreq2MidiPitch(annotation(i));
         sum   = sum + (midiE - midiA)^2;
         
-        %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        
         n = n + 1; % so far, n data points are not zero in annotation
     end
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 errCentRms = sqrt(sum / n) * 100;
 
 end

@@ -28,25 +28,25 @@ if (m ~= 1 && n ~=1)
     error('illegal fs');
 end
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 % first block the audio and get the time-stamps per block (myBlockAudio)
 [xb, timeInSec] = myBlockAudio(x, blockSize, hopSize, fs);
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 [~,n] = size(xb); %n = number of blocks
 f0    = zeros(n,1);
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 for i = 1 : n
     
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     % compute the ACF for each block (myCompAcf)
     r = myCompAcf(xb(:,i));
     
     
-    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     % compute the pitch in Hz for each block (myGetF0FromACF)
     f0(i) = myGetF0FromAcf(r,fs);
 end

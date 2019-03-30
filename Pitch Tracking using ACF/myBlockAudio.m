@@ -32,12 +32,13 @@ if (m ~= 1 && n ~=1)
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 blockNumbers = ceil(length(x) / hopSize);
 pad          = blockNumbers * blockSize - n;
 x            = [x; zeros(pad, 1)];
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 xb        = zeros(blockSize,    blockNumbers);
 timeInSec = zeros(blockNumbers, 1);
 for i = 1 : blockNumbers
